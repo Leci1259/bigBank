@@ -1,7 +1,21 @@
 body {
   font-size: 120%;
   font-family: "Courgette", cursive;
-  background: #354929;
+  background-color: #354929;
+  background-image: radial-gradient(
+      white,
+      rgba(255, 255, 255, 0.2) 2px,
+      transparent 40px
+    ),
+    radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px),
+    radial-gradient(
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.1) 2px,
+      transparent 30px
+    );
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 }
 
 button,
@@ -26,6 +40,9 @@ th {
 #tbody {
   color: black;
   text-shadow: 0 0 5px #354929;
+}
+#myChart {
+  background-color: white;
 }
 
 tr:nth-child(even) {
@@ -63,79 +80,4 @@ tr:nth-child(even) {
   overflow: auto;
   width: 90%;
   margin: 0 auto;
-}
-.circle {
-  position: absolute;
-  border-radius: 50%;
-  background: white;
-  animation: ripple 15s infinite;
-  box-shadow: 0px 0px 1px 0px #508fb9;
-}
-
-.small {
-  width: 600px;
-  height: 200px;
-  left: -100px;
-  bottom: -100px;
-}
-
-.medium {
-  width: 750px;
-  height: 400px;
-  left: -200px;
-  bottom: -200px;
-}
-
-.large {
-  width: 1000px;
-  height: 600px;
-  left: -300px;
-  bottom: -300px;
-}
-
-.xlarge {
-  width: 1250px;
-  height: 800px;
-  left: -400px;
-  bottom: -400px;
-}
-
-.xxlarge {
-  width: 1500px;
-  height: 1000px;
-  left: -500px;
-  bottom: -500px;
-}
-
-.shade1 {
-  opacity: 0.2;
-}
-.shade2 {
-  opacity: 0.5;
-}
-
-.shade3 {
-  opacity: 0.7;
-}
-
-.shade4 {
-  opacity: 0.8;
-}
-
-.shade5 {
-  opacity: 0.9;
-}
-
-@keyframes ripple {
-  0% {
-    transform: scale(0.8);
-  }
-
-  50% {
-    transform: scale(1.2);
-  }
-
-  100% {
-    transform: scale(0.8);
-  }
 }
