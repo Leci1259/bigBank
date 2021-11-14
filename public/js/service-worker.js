@@ -5,6 +5,7 @@ const FILES_TO_CACHE = [
     "../css/styles.css",
     "../html/index.html",
     "../manifest.json",
+    "../index.html",
     "./index.js",
     "./db.js",
     "https://cdn.jsdelivr.net/npm/chart.js@2.8.0"
@@ -69,7 +70,14 @@ self.addEventListener("fetch", function (evt) {
     }
     evt.respondWith(
         caches.match(evt.request).then(function (response) {
-            return response || fetch(evt.request);
+            //if there is cache
+            if (response) {
+                //return it
+                return response
+            } else {
+                //if not, fetch 
+                return fetch(evt.request);
+            }
         })
     );
 });
