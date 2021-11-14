@@ -51,5 +51,14 @@ function databaseCheck() {
     };
 };
 
+
+//function to save records
+function saveRecord(record) {
+    const transaction = db.transaction(["budgetList"], "readwrite");
+    const BudgetStore = transaction.objectStore("budgetList");
+
+    BudgetStore.add(record);
+}
+
 //anytime site comes online automatically check & post
 window.addEventListener("online", databaseCheck);
